@@ -4,6 +4,9 @@
     "type": "bundle",
     "description": "Informations about crypto currencies (bitcoin, litecoin and more)",
     "minimum-stability": "dev",
+    "require": {
+      "kujaff/versionsbundle": "dev-master"
+    },
     "autoload": {
         "psr-0": { "kujaff\\CryptoCurrenciesBundle\\": "" }
     },
