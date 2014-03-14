@@ -1,0 +1,8 @@
+services:
+    cryptocurrencies.installer:
+        class: kujaff\CryptoCurrenciesBundle\Install\Install
+        arguments: [@service_container]
+        tags:
+            - { name: bundle.install }
+            - { name: bundle.update }
+            - { name: bundle.uninstall }
