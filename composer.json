@@ -1,0 +1,17 @@
+{
+    "name": "kujaff/cryptocurrenciesbundle",
+    "license": "MIT",
+    "type": "bundle",
+    "description": "Informations about crypto currencies (bitcoin, litecoin and more)",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "kujaff\\CryptoCurrenciesBundle\\": "" }
+    },
+    "target-dir": "kujaff/CryptoCurrenciesBundle",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/kujaff/cryptocurrenciesbundle.git"
+        }
+    ]
+}
