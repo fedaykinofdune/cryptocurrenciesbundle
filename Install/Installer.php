@@ -1,25 +1,13 @@
 <?php
 namespace kujaff\CryptoCurrenciesBundle\Install;
 
-use kujaff\VersionsBundle\Installer\Install as BaseInstall;
-use kujaff\VersionsBundle\Installer\UpdateMethods;
+use kujaff\VersionsBundle\Installer\EasyInstaller;
+use kujaff\VersionsBundle\Installer\Install;
 use kujaff\VersionsBundle\Installer\Uninstall;
 use kujaff\VersionsBundle\Versions\Version;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class Install extends UpdateMethods implements BaseInstall, Uninstall
+class Installer extends EasyInstaller implements Install, Uninstall
 {
-
-	/**
-	 * Constructor
-	 *
-	 * @param ContainerInterface $container
-	 */
-	public function __construct(ContainerInterface $container)
-	{
-		parent::__construct($container);
-		$this->_findUpdateMethods($this);
-	}
 
 	/**
 	 * Get bundle name
@@ -38,7 +26,7 @@ class Install extends UpdateMethods implements BaseInstall, Uninstall
 	 */
 	public function install()
 	{
-		$this->_executeSQL('DROP TABLE IF EXISTS cryptocurrencies');
+		$this->_dropTables(array('cryptocurrencies'));
 		$this->_executeSQL('
 			CREATE TABLE `cryptocurrencies` (
 				`id` int(11) NOT NULL AUTO_INCREMENT,
@@ -166,7 +154,7 @@ class Install extends UpdateMethods implements BaseInstall, Uninstall
 	 */
 	public function uninstall()
 	{
-		$this->_executeSQL('DROP TABLE IF EXISTS cryptocurrencies');
+		$this->_dropTables(array('cryptocurrencies'));
 	}
 
 }

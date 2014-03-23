@@ -1,6 +1,6 @@
 services:
     cryptocurrencies.installer:
-        class: kujaff\CryptoCurrenciesBundle\Install\Install
+        class: kujaff\CryptoCurrenciesBundle\Install\Installer
         arguments: [@service_container]
         tags:
             - { name: bundle.install }
