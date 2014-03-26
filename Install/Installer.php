@@ -3,10 +3,12 @@ namespace kujaff\CryptoCurrenciesBundle\Install;
 
 use kujaff\VersionsBundle\Installer\EasyInstaller;
 use kujaff\VersionsBundle\Installer\Install;
+use kujaff\VersionsBundle\Installer\Update;
 use kujaff\VersionsBundle\Installer\Uninstall;
 use kujaff\VersionsBundle\Versions\Version;
+use kujaff\VersionsBundle\Entity\BundleVersion;
 
-class Installer extends EasyInstaller implements Install, Uninstall
+class Installer extends EasyInstaller implements Update, Install, Uninstall
 {
 
 	/**
@@ -155,6 +157,16 @@ class Installer extends EasyInstaller implements Install, Uninstall
 	public function uninstall()
 	{
 		$this->_dropTables(array('cryptocurrencies'));
+	}
+
+	public function update(BundleVersion $bundleVersion)
+	{
+		return $this->_updateOneVersionOneMethod($this, $bundleVersion);
+	}
+
+	public function update_1_0_1()
+	{
+		$this->_executeSQL('INSERT INTO cryptocurrencies (tag, name, algorithm) VALUES (\'FLT\', \'Flutter\', 2)');
 	}
 
 }

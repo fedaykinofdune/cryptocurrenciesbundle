@@ -136,4 +136,24 @@ class Currency
 		return $this->difficulty;
 	}
 
+	/**
+	 * Get 16x16 icon url
+	 *
+	 * @return string
+	 */
+	public function getIcon16x16()
+	{
+		return 'bundles/cryptocurrencies/icons-16x16/' . $this->getTag() . '.png';
+	}
+
+	/**
+	 * Get 64x64 icon url
+	 *
+	 * @return string
+	 */
+	public function getIcon64x64()
+	{
+		return 'bundles/cryptocurrencies/icons-64x64/' . $this->getTag() . '.png';
+	}
+
 }
