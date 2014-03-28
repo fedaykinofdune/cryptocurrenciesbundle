@@ -9,7 +9,7 @@ class CryptoCurrenciesBundle extends VersionnedBundle
 
 	public function __construct()
 	{
-		$this->version = new Version('1.0.1');
+		$this->version = new Version('1.0.2');
 	}
 
 }

@@ -170,4 +170,10 @@ class Installer extends EasyInstaller implements Update, Install, Uninstall
 		$this->_executeSQL('INSERT INTO cryptocurrencies (tag, name, algorithm) VALUES (\'EBT\', \'Electronic Benefit Transfer\', 2)');
 	}
 
+	public function update_1_0_2()
+	{
+		$this->_executeSQL('INSERT INTO cryptocurrencies (tag, name, algorithm) VALUES (\'PIG\', \'Piggy\', 2)');
+		$this->_executeSQL('INSERT INTO cryptocurrencies (tag, name, algorithm) VALUES (\'EFL\', \'Electronic Gulden\', 2)');
+	}
+
 }
