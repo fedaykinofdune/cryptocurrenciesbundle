@@ -1,5 +1,5 @@
 {
-    "name": "kujaff/cryptocurrenciesbundle",
+    "name": "steevanb/cryptocurrenciesbundle",
     "license": "MIT",
     "type": "bundle",
     "description": "Informations about crypto currencies (bitcoin, litecoin and more)",
